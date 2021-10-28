@@ -15,14 +15,25 @@ namespace Sistema_de_Editoras.Controller
         {
             _listaBook.Add(valor);
         }
+
         public void excluir(BookModel valor)
         {
 
         }
+
         public void atualizar(BookModel valor)
         {
-
+            foreach(var item in _listaBook)
+            {
+                if(item.CodLivro == CodLivro)
+                {
+                    item.nameBook == valor.nameBook;
+                    item.livanoPublicacao == valor.livanoPublicacao;
+                    item.isbnBook == valor.isbnBook;
+                }
+            }
         }
+
         public BookModel search(Int32 CodLivro)
         {
             BookModel valor = null;

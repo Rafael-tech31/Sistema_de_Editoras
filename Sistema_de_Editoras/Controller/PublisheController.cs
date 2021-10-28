@@ -15,14 +15,24 @@ namespace Sistema_de_Editoras.Controller
         {
             _listaPublishers.Add(valor);
         }
+
         public void excluir(PublisherModel valor)
         {
 
         }
+
         public void atualizar(PublisherModel valor)
         {
-
+            foreach(var item in _listaPublishers)
+            {
+                if(item.codigo == valor.codigo)
+                {
+                    item.nome = valor.nome;
+                    item.sigla = valor.sigla;
+                }
+            }
         }
+
         public PublisherModel search(Int32 codigo)
         {
             PublisherModel valor = null;
